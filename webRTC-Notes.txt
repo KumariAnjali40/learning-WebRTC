@@ -52,3 +52,8 @@ set event on server side.
 
 
 //next topic==> Setting up client side Events(Created,Joined,Full);
+
+
+//next topic ==>Emit Ready Event, RTCPeerConnection & ICE.
+
+RTCPeerConnection==>it is an interface ==>connection between the local computer and remote peer.
