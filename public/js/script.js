@@ -15,6 +15,8 @@ navigator.getUserMedia=navigator.getUserMedia ||navigator.webkitGetUserMedia || 
 var creator=false;
 
 var rtcPeerConnection;
+
+var userStream;
 //public IP connection accessible using RTCpeerConnection.
 //we have STUN Server in our browser and from that we can know IP address 
 var iceServers = {
@@ -46,6 +48,8 @@ socket.on("created",function(){
            video:{width:1280,height:720}
         },
         function(stream){
+
+            userStream=stream;
          //in this function video streaming 
          videoChatForm.style="display:none";
          userVideo.srcObject=stream;
@@ -69,6 +73,7 @@ socket.on("joined",function(){
         },
         function(stream){
          //in this function video streaming 
+         userStream=stream;
          videoChatForm.style="display:none";
          userVideo.srcObject=stream;
          userVideo.onloadedmetadata=function(e){
@@ -102,6 +107,9 @@ socket.on("ready",function(){
        //exchange the IceCandidate.
        rtcPeerConnection.onicecandidate=OnIceCandidateFunction;
        rtcPeerConnection.ontrack = OntrackFunction;
+       rtcPeerConnection.addTrack(userStream.getTracks()[0],userStream);   //for getting the peerVideo audio.
+       //getTrack is an array in which 0th index contains audio and first index contain video.
+       rtcPeerConnection.addTrack(userStream.getTracks()[1],userStream);   //for getting the peerVideo video.
     }
 });
 
