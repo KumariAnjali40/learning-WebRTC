@@ -64,6 +64,7 @@ io.on('connection',function(socket){
     //create an offer==>create on both side. so getting the offer on server side and sending to the clinet side.
     socket.on("offer",function(offer,roomName){
         console.log("offer");
+        console.log(offer);
        socket.broadcast.to(roomName).emit("offer",offer);
     });
 

@@ -22,7 +22,7 @@ var userStream;
 var iceServers = {
     iceServers:[
        { urls: "stun:stun.services.mozilla.com" },
-       { urls: "stun1.l.google.com:19302" }
+       { urls: "stun:stun1.l.google.com:19302" }
     ]
 }
 
