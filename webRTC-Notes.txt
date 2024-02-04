@@ -38,3 +38,10 @@ next day==>
 
 1. What is getUserMedia?==>a function so we can catch audio and video form browser.
 2.How to Use getUserMedia?
+
+
+next topic==>now I am moving to Signaling Server
+
+1. How to create a room?
+2.How to Join a room?
+3.How to Set room size?

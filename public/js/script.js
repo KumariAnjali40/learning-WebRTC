@@ -1,3 +1,5 @@
+var socket=io();
+
 var videoChatForm=document.getElementById('video-chat-form');
 var videoChatRoom=document.getElementById('video-chat-rooms');
 var joinBtn=document.getElementById('join');
@@ -9,6 +11,12 @@ joinBtn.addEventListener("click",function(){
     if(roomName.value==""){
         alert("please enter a room name!")
     }else{
+ 
+        //here i am going to create an event
+         socket.emit("join",roomName.value);
+
+
+
         navigator.getUserMedia=navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         navigator.getUserMedia(
             {
