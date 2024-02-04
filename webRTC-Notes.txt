@@ -48,3 +48,7 @@ next topic==>now I am moving to Signaling Server
 
 
 next topic==>Making a signaling server.
+set event on server side.
+
+
+//next topic==> Setting up client side Events(Created,Joined,Full);
