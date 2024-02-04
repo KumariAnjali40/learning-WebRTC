@@ -101,6 +101,7 @@ socket.on("ready",function(){
 
        //exchange the IceCandidate.
        rtcPeerConnection.onicecandidate=OnIceCandidateFunction;
+       rtcPeerConnection.ontrack = OntrackFunction;
     }
 });
 
@@ -125,4 +126,11 @@ function OnIceCandidateFunction(event){
     }
 
 
+}
+
+function OntrackFunction(event){ //in this event there is stream array
+    peerVideo.srcObject=event.streams[0];
+    peerVideo.onloadedmetadata=function(e){
+       peerVideo.play();
+    }
 }
