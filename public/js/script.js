@@ -113,6 +113,8 @@ socket.on("ready",function(){
 
        rtcPeerConnection.createOffer(
         function(offer){
+
+          rtcPeerConnection.setLocalDescription(offer);
           socket.emit('offer',offer,roomName);
         },
         function(error){
@@ -127,12 +129,36 @@ socket.on("candidate",function(){
     
 });
 
-socket.on("offer",function(){
-    
+socket.on("offer",function(offer){
+    if(!creator){
+        var rtcPeerConnection =new RTCPeerConnection(iceServers);
+ 
+        //exchange the IceCandidate.
+        rtcPeerConnection.onicecandidate=OnIceCandidateFunction;
+        rtcPeerConnection.ontrack = OntrackFunction;
+        rtcPeerConnection.addTrack(userStream.getTracks()[0],userStream);   //for getting the peerVideo audio.
+        //getTrack is an array in which 0th index contains audio and first index contain video.
+        rtcPeerConnection.addTrack(userStream.getTracks()[1],userStream);   //for getting the peerVideo video.
+        rtcPeerConnection.setRemoteDescription(offer); //sending description to peer user.
+ 
+        rtcPeerConnection.createAnswer(
+         function(answer){
+            rtcPeerConnection.setLocalDescription(answer);
+           socket.emit('answer',answer,roomName);
+         },
+         function(error){
+             console.log(error);
+         }
+        )
+     }
 });
 
-socket.on("answer",function(){
-    
+
+//after offer peerVideo will send the answer.
+
+//answer is remote for creator but local for peer user.
+socket.on("answer",function(answer){
+     rtcPeerConnection.setRemoteDescription(answer);
 });
 
 

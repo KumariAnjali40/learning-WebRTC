@@ -69,3 +69,8 @@ for ssending the audio and video to peerVideo.
 //for exchanging the offer.
 
 
+//next topic==>Offer and Answer.
+
+
+//SDP==>Session Description protocol.
+creator have local SDP and the get user has Remote Description.
