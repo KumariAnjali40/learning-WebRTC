@@ -64,3 +64,8 @@ RTCPeerConnection==>it is an interface ==>connection between the local computer 
 //next topic==>Adding Media Tracks.
 for ssending the audio and video to peerVideo.
 
+
+//next topic==>Creating an Offer.
+//for exchanging the offer.
+
+

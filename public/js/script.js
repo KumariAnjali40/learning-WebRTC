@@ -110,6 +110,15 @@ socket.on("ready",function(){
        rtcPeerConnection.addTrack(userStream.getTracks()[0],userStream);   //for getting the peerVideo audio.
        //getTrack is an array in which 0th index contains audio and first index contain video.
        rtcPeerConnection.addTrack(userStream.getTracks()[1],userStream);   //for getting the peerVideo video.
+
+       rtcPeerConnection.createOffer(
+        function(offer){
+          socket.emit('offer',offer,roomName);
+        },
+        function(error){
+            console.log(error);
+        }
+       )
     }
 });
 
