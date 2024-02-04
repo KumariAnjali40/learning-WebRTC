@@ -30,3 +30,11 @@ after creating this offer that offer reach to Signaling Server ==> that offer ch
 and finally connction established. Now Signaling Server work is over.
 
 ==>so For this project I will learn how to create an Offer
+
+
+
+next day==>
+*Getting User Media*
+
+1. What is getUserMedia?==>a function so we can catch audio and video form browser.
+2.How to Use getUserMedia?
