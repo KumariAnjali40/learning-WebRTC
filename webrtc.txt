@@ -5,3 +5,20 @@
 3) WebSocket to Socket.IO Conversion.
 4) RealTime Screen Sharing System 
 5) Group Call
+
+
+1)==>What is WebRtc
+
+ans==>WebRtc ==>Web Real-Time Communication. It is like open source project.
+and many browser support WebRtc like chrome, firefox ....
+and supported by mobile also. 
+no need to install packages. 
+
+2) WebRTC uses?
+==> >Social Networking.
+    >Dating Services.
+    >E-learning
+    >Live BroadCasting
+    >Medical Consultations
+    >Financial Services
+    >Real-time marketing
