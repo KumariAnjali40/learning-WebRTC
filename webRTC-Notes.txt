@@ -22,3 +22,11 @@ no need to install packages.
     >Medical Consultations
     >Financial Services
     >Real-time marketing
+
+
+3) How webRTC works.
+=>when two user try to connect webRTC API create an Offer(SDP Offer as Local Description)==>
+after creating this offer that offer reach to Signaling Server ==> that offer changes to Remote  Description on the side of other user.now Answer SDP as Local Description created to the receiving client==>then it reach to Signaling Server and changes to Remote Description.
+and finally connction established. Now Signaling Server work is over.
+
+==>so For this project I will learn how to create an Offer
