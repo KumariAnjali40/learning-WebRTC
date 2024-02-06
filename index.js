@@ -73,5 +73,14 @@ io.on('connection',function(socket){
     socket.on("answer",function(answer,roomName){
         console.log("answer");
        socket.broadcast.to(roomName).emit("answer",answer); //sending ans to the client .
+
     });
+
+
+    //leave room code.
+    socket.on("leave",function(roomName){
+        socket.leave(roomName);
+        socket.broadcast.to(roomName).emit("leave");
+     });
+     
 })

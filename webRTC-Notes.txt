@@ -87,3 +87,6 @@ creator have local SDP and the get user has Remote Description.
 
 
 //next topic ==>hide and show user Camera.
+
+
+//next topic==>how to leave room
