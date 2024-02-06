@@ -7,6 +7,15 @@ var roomInput=document.getElementById('roomName')
 var userVideo=document.getElementById('user-video')//our video streaming.
 var peerVideo=document.getElementById('peer-video');//another side user.
 
+
+//upgrading work
+var divBtnGroup=document.getElementById('btn-group');
+var muteButton=document.getElementById('muteButton');
+
+var muteFlag=false;
+
+
+
 var roomName=roomInput.value
 
 
@@ -37,6 +46,18 @@ joinBtn.addEventListener("click",function(){
     }
 });
 
+
+muteButton.addEventListener("click",function(){
+   muteFlag=!muteFlag;
+   if(muteFlag){
+    userStream.getTracks()[0].enabled=false;
+     muteButton.textContent='Unmute'
+   }else{
+    userStream.getTracks()[0].enabled=true;
+        muteButton.textContent='Mute'
+   }
+});
+
 // Setting up client side Events(Created,Joined,Full);
 socket.on("created",function(){
 
@@ -52,6 +73,7 @@ socket.on("created",function(){
             userStream=stream;
          //in this function video streaming 
          videoChatForm.style="display:none";
+         divBtnGroup.style="display:flex"
          userVideo.srcObject=stream;
          userVideo.onloadedmetadata=function(e){
             userVideo.play();
@@ -75,6 +97,7 @@ socket.on("joined",function(){
          //in this function video streaming 
          userStream=stream;
          videoChatForm.style="display:none";
+         divBtnGroup.style="display:flex"
          userVideo.srcObject=stream;
          userVideo.onloadedmetadata=function(e){
             userVideo.play();
