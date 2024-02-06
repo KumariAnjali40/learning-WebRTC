@@ -74,3 +74,5 @@ for ssending the audio and video to peerVideo.
 
 //SDP==>Session Description protocol.
 creator have local SDP and the get user has Remote Description.
+
+//finishing up our video chat.
