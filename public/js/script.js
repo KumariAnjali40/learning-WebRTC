@@ -11,8 +11,10 @@ var peerVideo=document.getElementById('peer-video');//another side user.
 //upgrading work
 var divBtnGroup=document.getElementById('btn-group');
 var muteButton=document.getElementById('muteButton');
+var hideCameraBtn=document.getElementById('hideCamera');
 
 var muteFlag=false;
+var hideCameraFlag=false;
 
 
 
@@ -58,6 +60,18 @@ muteButton.addEventListener("click",function(){
    }
 });
 
+
+hideCameraBtn.addEventListener("click",function(){
+    hideCameraFlag=!hideCameraFlag;
+    if(hideCameraFlag){
+     userStream.getTracks()[1].enabled=false;
+      muteButton.textContent='Show Camera'
+    }else{
+     userStream.getTracks()[1].enabled=true;
+         muteButton.textContent='Hide Camera'
+    }
+ });
+ 
 // Setting up client side Events(Created,Joined,Full);
 socket.on("created",function(){
 
