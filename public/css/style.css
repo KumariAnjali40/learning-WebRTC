@@ -56,10 +56,45 @@ body {
     font-size: 16px;
   }
   
-  button {
+  #join {
     background: #302e2e23;
     color: #fff;
     font-size: 18px;
     padding: 12px 0;
     width: 100%;
+  }
+
+  #video-chat-rooms{
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-group button {
+    background-color: #000000; /* Green background */
+    border: 1px solid white; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #454c45;
+  }
+
+  .btn-group{
+    display: flex;
+    justify-content: center;
   }

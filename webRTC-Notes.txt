@@ -76,3 +76,11 @@ for ssending the audio and video to peerVideo.
 creator have local SDP and the get user has Remote Description.
 
 //finishing up our video chat.
+
+
+
+//next topic ==> Now Upgrading the video chat App-->
+
+1. Mute Microphone.
+2. Leave Room.
+3. Hide Camera.

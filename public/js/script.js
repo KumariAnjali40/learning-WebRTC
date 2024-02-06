@@ -45,7 +45,7 @@ socket.on("created",function(){
         {
            //in this object here audio and video.
            audio:true,
-           video:{width:1280,height:720}
+           video:{width:500,height:500}
         },
         function(stream){
 
@@ -69,7 +69,7 @@ socket.on("joined",function(){
         {
            //in this object here audio and video.
            audio:true,
-           video:{width:1280,height:720}
+           video:{width:500,height:500}
         },
         function(stream){
          //in this function video streaming 
@@ -102,7 +102,7 @@ socket.on("ready",function(){
     //we have STUN Server in our browser and from that we can know IP address 
 
     if(creator){
-       var rtcPeerConnection =new RTCPeerConnection(iceServers);
+        rtcPeerConnection =new RTCPeerConnection(iceServers);
 
        //exchange the IceCandidate.
        rtcPeerConnection.onicecandidate=OnIceCandidateFunction;
@@ -132,7 +132,7 @@ socket.on("candidate",function(candidate){
 
 socket.on("offer",function(offer){
     if(!creator){
-        var rtcPeerConnection =new RTCPeerConnection(iceServers);
+         rtcPeerConnection =new RTCPeerConnection(iceServers);
  
         //exchange the IceCandidate.
         rtcPeerConnection.onicecandidate=OnIceCandidateFunction;

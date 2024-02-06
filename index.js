@@ -57,7 +57,7 @@ io.on('connection',function(socket){
     });
     //second step==>candidate in both side. first getting the candidate on server side then sending the candidate in client side.
     socket.on("candidate",function(candidate,roomName){
-       console.log("Candidate");
+       console.log("candidate");
        console.log(candidate);
        socket.broadcast.to(roomName).emit("candidate",candidate)
     });
