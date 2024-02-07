@@ -19,7 +19,7 @@ var hideCameraFlag=false;
 
 
 
-var roomName=roomInput.value
+var roomName;
 
 
 navigator.getUserMedia=navigator.getUserMedia ||navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -42,7 +42,7 @@ joinBtn.addEventListener("click",function(){
     if(roomInput.value==""){
         alert("please enter a room name!")
     }else{
- 
+        roomName=roomInput.value
         //here i am going to create an event
          socket.emit("join",roomName);
         
