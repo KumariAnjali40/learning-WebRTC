@@ -7,9 +7,6 @@ const socket=require('socket.io');
 
 const server=http.createServer(app);
 
-server.listen(3000,()=>{
-    console.log("Server is running")
-})
 
 const bodyParser=require('body-parser');
 
@@ -86,4 +83,9 @@ io.on('connection',function(socket){
         socket.broadcast.to(roomName).emit("leave");
      });
      
+})
+
+
+server.listen(3000,()=>{
+    console.log("Server is running")
 })
