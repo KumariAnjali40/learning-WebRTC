@@ -1,10 +1,13 @@
 const express=require('express');
+const http=require('http');
 
 const app=express();
 
 const socket=require('socket.io');
 
-const server=app.listen(3000,()=>{
+const server=http.createServer(app);
+
+server.listen(3000,()=>{
     console.log("Server is running")
 })
 
