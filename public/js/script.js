@@ -1,4 +1,4 @@
-var socket=io();
+var socket=io("https://videochat-vdmw.onrender.com",{transports:["websocket"]})
 
 var videoChatForm=document.getElementById('video-chat-form');
 var videoChatRoom=document.getElementById('video-chat-rooms');
