@@ -1,4 +1,4 @@
-var socket=io("https://videochat-vdmw.onrender.com",{transports:["websocket"]})
+var socket=io()
 
 var videoChatForm=document.getElementById('video-chat-form');
 var videoChatRoom=document.getElementById('video-chat-rooms');
@@ -33,8 +33,8 @@ var userStream;
 //we have STUN Server in our browser and from that we can know IP address 
 var iceServers = {
     iceServers:[
-       { urls: "stun:stun.services.mozilla.com" },
-       { urls: "stun:stun1.l.google.com:19302" }
+       { urls: "stun:stun1.l.google.com:19302" },
+       { urls: "stun:stun2.l.google.com:19302" }
     ]
 }
 
@@ -243,9 +243,10 @@ socket.on("leave",function(){
 })
 
 function OnIceCandidateFunction(event){
- 
     if(event.candidate){
         socket.emit("candidate",event.candidate,roomName);
+
+        console.log(event.candidate);
     }
 
 
