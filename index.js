@@ -40,7 +40,7 @@ io.on('connection',function(socket){
         socket.join(roomname); // create a room
         socket.emit("created");
         console.log("Room Joined");
-       }else if(room.size==2){  //I want 2 user chat so if room size is only one then another user can join the room.
+       }else if(room.size==1){  //I want 2 user chat so if room size is only one then another user can join the room.
            socket.join(roomname);
            socket.emit("joined");
        }else{
